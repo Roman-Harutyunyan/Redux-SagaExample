@@ -9,7 +9,7 @@ export default function reducer(state = initialState, action) {
         case GET_SUCCESS: {
             return {
                 ...state,
-                data: action.payload.data.main.temp
+                temp: action.payload.data.main.temp
             }
         }
         default: {

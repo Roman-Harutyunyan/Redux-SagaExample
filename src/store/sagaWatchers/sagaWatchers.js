@@ -10,7 +10,7 @@ export default function* watcher() {
 
 function* worker(action) {
     const {location} = action.payload;
-    const {data} = yield call(Api.getData, search);
+    const {data} = yield call(Api.getData, location);
     try {
         yield put({
             type: GET_SUCCESS,
