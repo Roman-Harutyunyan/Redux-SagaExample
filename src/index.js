@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 saga.run();
 root.render(
-  <Provider>
+  <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
