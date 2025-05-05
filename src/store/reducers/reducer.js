@@ -1,3 +1,19 @@
+import { GET_SUCCESS } from "../actions/action"
+
 const initialState = {
-    data: ""
+    temp: ""
+}
+
+export default function reducer(state = initialState, action) {
+    switch(action.type) {
+        case GET_SUCCESS: {
+            return {
+                ...state,
+                data: action.payload.data.main.temp
+            }
+        }
+        default: {
+            return state
+        }
+    }
 }
