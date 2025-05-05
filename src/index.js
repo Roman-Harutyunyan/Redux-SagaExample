@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore } from 'redux';
+import watchers from './store/sagaWatchers';
 
 const saga = createSagaMiddleware();
 
@@ -11,7 +12,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = legacy_createStore(composeEnhancers(applyMiddleware(saga)));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-saga.run();
+saga.run(watchers);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
